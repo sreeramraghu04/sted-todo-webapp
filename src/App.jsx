@@ -22,15 +22,22 @@ function App() {
       alert("Enter a task");
       return;
     }
-
-      // Added Task Id
     const newTask = {
       id: todo.length + 1,
       taskName: task,
+      isCompleted: false,
     };
-
     setTodo([...todo, newTask]);
     setTask("");
+  };
+
+  // Update Task
+  const updateTask = (id) => {
+    setTodo(
+      todo.map((item) =>
+        item.id === id ? { ...item, isCompleted: true } : item,
+      ),
+    );
   };
 
   // Delete Task
@@ -55,7 +62,12 @@ function App() {
 
       <div className="m-6 flex flex-wrap gap-8 justify-center">
         {todo.map((item) => (
-          <Todo key={item.id} item={item} deleteTask={deleteTask} />
+          <Todo
+            key={item.id}
+            item={item}
+            deleteTask={deleteTask}
+            updateTask={updateTask}
+          />
         ))}
       </div>
     </div>

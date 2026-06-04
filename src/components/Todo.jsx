@@ -1,16 +1,37 @@
-const Todo = ({ item, deleteTask }) => {
+const Todo = ({ item, deleteTask, updateTask }) => {
   return (
-    <div className="w-75 bg-black rounded-lg p-8">
-      <h1 className="font-semibold">
-        {item.id} : {item.taskName}
-      </h1>
-
-      <button
-        className="bg-blue-800 p-2 rounded mt-6 w-full"
-        onClick={() => deleteTask(item.id)}
-      >
-        Remove
-      </button>
+    <div
+      className="flex flex-col justify-between w-75 h-70 bg-black rounded-lg p-8 "
+      key={item.id}
+    >
+      <div>
+        <h1 className="font-semibold flex-wrap">
+          {item.id} : {item.taskName}
+        </h1>
+        <div className="mt-6">
+          <h1 className="flex">
+            Status : {item.isCompleted ? <h1>Completed</h1> : <h1>Pending</h1>}
+          </h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <button
+          className="bg-blue-800 p-1 rounded "
+          onClick={() => {
+            updateTask(item.id);
+          }}
+        >
+          Update Status
+        </button>
+        <button
+          className="bg-blue-800 p-1 rounded "
+          onClick={() => {
+            deleteTask(item.id);
+          }}
+        >
+          Remove
+        </button>
+      </div>
     </div>
   );
 };
