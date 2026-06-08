@@ -49,7 +49,7 @@ function App() {
     <div className="place-items-center bg-linear-to-b from-fuchsia-900 to-slate-950 min-h-screen pt-14 text-white">
       <div className="flex bg-white p-4 w-[320px] rounded-md">
         <input
-          className="w-full p-2 outline-none text-black"
+          className="w-full p-2 text-black"
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}

@@ -16,7 +16,7 @@ const Todo = ({ item, deleteTask, updateTask }) => {
       </div>
       <div className="flex flex-col gap-2">
         <button
-          className="bg-blue-800 p-1 rounded "
+          className="bg-blue-800 p-1 rounded"
           onClick={() => {
             updateTask(item.id);
           }}
@@ -24,7 +24,7 @@ const Todo = ({ item, deleteTask, updateTask }) => {
           Update Status
         </button>
         <button
-          className="bg-blue-800 p-1 rounded "
+          className="bg-blue-800 p-1 rounded"
           onClick={() => {
             deleteTask(item.id);
           }}
